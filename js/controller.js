@@ -22,6 +22,11 @@ const submitButton = document.querySelector('.submit');
 const resetButton = document.querySelector('.reset');
 const form = document.querySelector('.golf-score-form');
 
+let touchStartX = 0;
+let touchStartY = 0;
+let touchEndX = 0;
+let touchEndY = 0;
+
 // Write to local storage, change current hole, and init form
 const changeHole = function (direction) {
   //if direction is a hole number, set to that hole. otherwise prev or next
@@ -133,6 +138,24 @@ holeNav.forEach(function (anchor) {
   });
 });
 
+form.addEventListener('touchStart', function (event) {
+  touchStartX = event.screenX;
+  touchStartY = event.screenY;
+});
+
+form.addEventListener('touchend', function (event) {
+  touchEndX = event.screenX;
+  touchEndY = event.screenY;
+
+  if (Math.abs(touchStartX - touchEndX) > Math.abs(touchStartY - touchEndY)) {
+    // it's more horizontal than vertical
+    if (touchStartX - touchEndX > 0) {
+      console.log('s left');
+    } else {
+      console.log('s right');
+    }
+  }
+});
 currentHoleLabel.addEventListener('change', (e) => {
   changeHole(+e.target.value.replace('hole', ''));
 });
