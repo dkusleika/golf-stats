@@ -9,7 +9,12 @@
   <body>
     <form id="golfScoreForm" class="golf-score-form">
       <h2 class="hole-number">
-        <a href="#" class="prev-hole hole-nav">&laquo;</a>
+        <a href="#" class="prev-hole hole-nav"
+          ><ion-icon
+            class="nav-icon"
+            name="chevron-back-circle-outline"
+          ></ion-icon
+        ></a>
         <select class="hole-num hole-nav" id="holeSelect">
           <option value="hole1">Hole 1</option>
           <option value="hole2">Hole 2</option>
@@ -30,7 +35,12 @@
           <option value="hole17">Hole 17</option>
           <option value="hole18">Hole 18</option>
         </select>
-        <a href="#" class="next-hole hole-nav"> &raquo; </a>
+        <a href="#" class="next-hole hole-nav"
+          ><ion-icon
+            class="nav-icon"
+            name="chevron-forward-circle-outline"
+          ></ion-icon
+        ></a>
       </h2>
       <div class="form-group">
         <label for="score" class="form-label">Score:</label>
@@ -250,6 +260,14 @@
       <button type="submit" class="submit">Submit</button>
       <button type="submit" class="reset">Reset</button>
     </form>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
     <script type="module" src="js/controller.js"></script>
   </body>
 </html>

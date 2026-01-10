@@ -24,8 +24,6 @@ const form = document.querySelector('.golf-score-form');
 
 let touchStartX = 0;
 let touchStartY = 0;
-let touchEndX = 0;
-let touchEndY = 0;
 
 // Write to local storage, change current hole, and init form
 const changeHole = function (direction) {
@@ -133,26 +131,34 @@ holeNav.forEach(function (anchor) {
   anchor.addEventListener('click', function (event) {
     event.preventDefault();
     //console.log('nav before', model.holes[0]);
-    changeHole(event.target.classList[0]);
+    changeHole(event.currentTarget.classList[0]);
     //console.log('nav after', model.holes[0]);
   });
 });
 
-form.addEventListener('touchStart', function (event) {
-  touchStartX = event.screenX;
-  touchStartY = event.screenY;
+form.addEventListener('touchstart', function (event) {
+  event.preventDefault;
+  touchStartX = event.touches[0].clientX;
+  touchStartY = event.touches[0].clientY;
 });
 
 form.addEventListener('touchend', function (event) {
-  touchEndX = event.screenX;
-  touchEndY = event.screenY;
+  event.preventDefault;
+  const touchEndX = event.changedTouches[0].clientX;
+  const touchEndY = event.changedTouches[0].clientY;
+  const diffX = touchStartX - touchEndX;
+  const diffY = touchStartY - touchEndY;
 
-  if (Math.abs(touchStartX - touchEndX) > Math.abs(touchStartY - touchEndY)) {
-    // it's more horizontal than vertical
+  if (Math.abs(diffX) - Math.abs(diffY) > window.innerWidth * 0.3) {
+    // it's a horizontal swipe
     if (touchStartX - touchEndX > 0) {
-      console.log('s left');
+      if (model.currentHole.index < 18) {
+        changeHole('next-hole');
+      }
     } else {
-      console.log('s right');
+      if (model.currentHole.index > 1) {
+        changeHole('prev-hole');
+      }
     }
   }
 });
