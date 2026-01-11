@@ -8,7 +8,7 @@ export const holes = [
     gir: '',
     putts: '',
     penalties: '',
-    puttLengths: ['', '', '', '', ''],
+    puttLengths: ['', '', '', '', '', ''],
     isDirty: false,
   },
   {
@@ -20,7 +20,7 @@ export const holes = [
     gir: '',
     putts: '',
     penalties: '',
-    puttLengths: ['', '', '', '', ''],
+    puttLengths: ['', '', '', '', '', ''],
     isDirty: false,
   },
   {
@@ -32,7 +32,7 @@ export const holes = [
     gir: '',
     putts: '',
     penalties: '',
-    puttLengths: ['', '', '', '', ''],
+    puttLengths: ['', '', '', '', '', ''],
     isDirty: false,
   },
   {
@@ -44,7 +44,7 @@ export const holes = [
     gir: '',
     putts: '',
     penalties: '',
-    puttLengths: ['', '', '', '', ''],
+    puttLengths: ['', '', '', '', '', ''],
     isDirty: false,
   },
   {
@@ -56,7 +56,7 @@ export const holes = [
     gir: '',
     putts: '',
     penalties: '',
-    puttLengths: ['', '', '', '', ''],
+    puttLengths: ['', '', '', '', '', ''],
     isDirty: false,
   },
   {
@@ -68,7 +68,7 @@ export const holes = [
     gir: '',
     putts: '',
     penalties: '',
-    puttLengths: ['', '', '', '', ''],
+    puttLengths: ['', '', '', '', '', ''],
     isDirty: false,
   },
   {
@@ -80,7 +80,7 @@ export const holes = [
     gir: '',
     putts: '',
     penalties: '',
-    puttLengths: ['', '', '', '', ''],
+    puttLengths: ['', '', '', '', '', ''],
     isDirty: false,
   },
   {
@@ -92,7 +92,7 @@ export const holes = [
     gir: '',
     putts: '',
     penalties: '',
-    puttLengths: ['', '', '', '', ''],
+    puttLengths: ['', '', '', '', '', ''],
     isDirty: false,
   },
   {
@@ -104,7 +104,7 @@ export const holes = [
     gir: '',
     putts: '',
     penalties: '',
-    puttLengths: ['', '', '', '', ''],
+    puttLengths: ['', '', '', '', '', ''],
     isDirty: false,
   },
   {
@@ -116,7 +116,7 @@ export const holes = [
     gir: '',
     putts: '',
     penalties: '',
-    puttLengths: ['', '', '', '', ''],
+    puttLengths: ['', '', '', '', '', ''],
     isDirty: false,
   },
   {
@@ -128,7 +128,7 @@ export const holes = [
     gir: '',
     putts: '',
     penalties: '',
-    puttLengths: ['', '', '', '', ''],
+    puttLengths: ['', '', '', '', '', ''],
     isDirty: false,
   },
   {
@@ -140,7 +140,7 @@ export const holes = [
     gir: '',
     putts: '',
     penalties: '',
-    puttLengths: ['', '', '', '', ''],
+    puttLengths: ['', '', '', '', '', ''],
     isDirty: false,
   },
   {
@@ -152,7 +152,7 @@ export const holes = [
     gir: '',
     putts: '',
     penalties: '',
-    puttLengths: ['', '', '', '', ''],
+    puttLengths: ['', '', '', '', '', ''],
     isDirty: false,
   },
   {
@@ -164,7 +164,7 @@ export const holes = [
     gir: '',
     putts: '',
     penalties: '',
-    puttLengths: ['', '', '', '', ''],
+    puttLengths: ['', '', '', '', '', ''],
     isDirty: false,
   },
   {
@@ -176,7 +176,7 @@ export const holes = [
     gir: '',
     putts: '',
     penalties: '',
-    puttLengths: ['', '', '', '', ''],
+    puttLengths: ['', '', '', '', '', ''],
     isDirty: false,
   },
   {
@@ -188,7 +188,7 @@ export const holes = [
     gir: '',
     putts: '',
     penalties: '',
-    puttLengths: ['', '', '', '', ''],
+    puttLengths: ['', '', '', '', '', ''],
     isDirty: false,
   },
   {
@@ -200,7 +200,7 @@ export const holes = [
     gir: '',
     putts: '',
     penalties: '',
-    puttLengths: ['', '', '', '', ''],
+    puttLengths: ['', '', '', '', '', ''],
     isDirty: false,
   },
   {
@@ -212,7 +212,7 @@ export const holes = [
     gir: '',
     putts: '',
     penalties: '',
-    puttLengths: ['', '', '', '', ''],
+    puttLengths: ['', '', '', '', '', ''],
     isDirty: false,
   },
 ];
@@ -264,25 +264,3 @@ function getHolesFromLocalStorage() {
 function saveHolesToLocalStorage() {
   localStorage.setItem('golfHoles', JSON.stringify(holes));
 }
-
-//   const holesFromStorage = getHolesFromLocalStorage();
-//   if (holesFromStorage) {
-//     for (let i = 0; i < model.holes.length; i++) {
-//       Object.assign(model.holes[i], holesFromStorage[i]);
-//     }
-//   }
-
-// function saveHolesToLocalStorage() {
-//   //console.log(currentHole.fairway);
-//   currentHole.score = scoreInput.value.replace('score', '');
-//   //model.currentHole.fairway = fairwayInput.value;
-//   currentHole.gir = girInput.value;
-//   currentHole.putts = puttsInput.value.replace('putts', '');
-//   currentHole.penalties = penaltyInput.value.replace('penalties', '');
-//   currentHole.putt1len = putt1Input.value.replace('putt1len', '');
-//   currentHole.putt2len = putt2Input.value.replace('putt2len', '');
-//   currentHole.putt3len = putt3Input.value.replace('putt3len', '');
-//   currentHole.putt4len = putt4Input.value.replace('putt4len', '');
-//   currentHole.putt5len = putt5Input.value.replace('putt5len', '');
-//   localStorage.setItem('golfHoles', JSON.stringify(model.holes));
-// }
