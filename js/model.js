@@ -8,6 +8,7 @@ export const holes = [
     gir: '',
     putts: '',
     penalties: '',
+    sandsave: 'N/A',
     puttLengths: ['', '', '', '', '', ''],
     isDirty: false,
   },
@@ -20,6 +21,7 @@ export const holes = [
     gir: '',
     putts: '',
     penalties: '',
+    sandsave: 'N/A',
     puttLengths: ['', '', '', '', '', ''],
     isDirty: false,
   },
@@ -32,6 +34,7 @@ export const holes = [
     gir: '',
     putts: '',
     penalties: '',
+    sandsave: 'N/A',
     puttLengths: ['', '', '', '', '', ''],
     isDirty: false,
   },
@@ -44,6 +47,7 @@ export const holes = [
     gir: '',
     putts: '',
     penalties: '',
+    sandsave: 'N/A',
     puttLengths: ['', '', '', '', '', ''],
     isDirty: false,
   },
@@ -56,6 +60,7 @@ export const holes = [
     gir: '',
     putts: '',
     penalties: '',
+    sandsave: 'N/A',
     puttLengths: ['', '', '', '', '', ''],
     isDirty: false,
   },
@@ -68,6 +73,7 @@ export const holes = [
     gir: '',
     putts: '',
     penalties: '',
+    sandsave: 'N/A',
     puttLengths: ['', '', '', '', '', ''],
     isDirty: false,
   },
@@ -80,6 +86,7 @@ export const holes = [
     gir: '',
     putts: '',
     penalties: '',
+    sandsave: 'N/A',
     puttLengths: ['', '', '', '', '', ''],
     isDirty: false,
   },
@@ -92,6 +99,7 @@ export const holes = [
     gir: '',
     putts: '',
     penalties: '',
+    sandsave: 'N/A',
     puttLengths: ['', '', '', '', '', ''],
     isDirty: false,
   },
@@ -104,6 +112,7 @@ export const holes = [
     gir: '',
     putts: '',
     penalties: '',
+    sandsave: 'N/A',
     puttLengths: ['', '', '', '', '', ''],
     isDirty: false,
   },
@@ -116,6 +125,7 @@ export const holes = [
     gir: '',
     putts: '',
     penalties: '',
+    sandsave: 'N/A',
     puttLengths: ['', '', '', '', '', ''],
     isDirty: false,
   },
@@ -128,6 +138,7 @@ export const holes = [
     gir: '',
     putts: '',
     penalties: '',
+    sandsave: 'N/A',
     puttLengths: ['', '', '', '', '', ''],
     isDirty: false,
   },
@@ -140,6 +151,7 @@ export const holes = [
     gir: '',
     putts: '',
     penalties: '',
+    sandsave: 'N/A',
     puttLengths: ['', '', '', '', '', ''],
     isDirty: false,
   },
@@ -152,6 +164,7 @@ export const holes = [
     gir: '',
     putts: '',
     penalties: '',
+    sandsave: 'N/A',
     puttLengths: ['', '', '', '', '', ''],
     isDirty: false,
   },
@@ -164,6 +177,7 @@ export const holes = [
     gir: '',
     putts: '',
     penalties: '',
+    sandsave: 'N/A',
     puttLengths: ['', '', '', '', '', ''],
     isDirty: false,
   },
@@ -176,6 +190,7 @@ export const holes = [
     gir: '',
     putts: '',
     penalties: '',
+    sandsave: 'N/A',
     puttLengths: ['', '', '', '', '', ''],
     isDirty: false,
   },
@@ -188,6 +203,7 @@ export const holes = [
     gir: '',
     putts: '',
     penalties: '',
+    sandsave: 'N/A',
     puttLengths: ['', '', '', '', '', ''],
     isDirty: false,
   },
@@ -200,6 +216,7 @@ export const holes = [
     gir: '',
     putts: '',
     penalties: '',
+    sandsave: 'N/A',
     puttLengths: ['', '', '', '', '', ''],
     isDirty: false,
   },
@@ -212,6 +229,7 @@ export const holes = [
     gir: '',
     putts: '',
     penalties: '',
+    sandsave: 'N/A',
     puttLengths: ['', '', '', '', '', ''],
     isDirty: false,
   },
@@ -224,12 +242,14 @@ export const setCurrentHole = function (holeId) {
   getHolesFromLocalStorage();
   currentHole = holes[holeId];
   //set defaults, but don't change is dirty unless the user changes something
+  console.log('model', currentHole.isDirty);
   if (!currentHole.isDirty) {
     currentHole.score = currentHole.par;
     currentHole.fairway = 'fairway hit';
     currentHole.gir = 'gir hit';
     currentHole.putts = 2;
     currentHole.penalties = 0;
+    currentHole.sandsave = 'N/A';
   }
 };
 
@@ -242,11 +262,12 @@ export const resetForm = function () {
     hole.gir = 'gir hit';
     hole.putts = '';
     hole.penalties = '';
+    hole.sandsave = '';
     for (let i = 0; i < 5; i++) {
       hole.puttLengths[i] = '';
     }
+    hole.isDirty = 0;
   });
-  setCurrentHole(0);
 };
 
 // Retrieve holes array from localStorage

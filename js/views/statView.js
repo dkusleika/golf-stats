@@ -12,6 +12,7 @@ const girText = document.querySelector('.gir-text');
 const girInput = document.querySelector('.gir-target');
 const puttsInput = document.getElementById('putts');
 const penaltyInput = document.getElementById('penalties');
+const sandSaveInput = document.getElementById('sandsave');
 const puttLenInputs = [];
 for (let i = 0; i < 6; i++) {
   puttLenInputs[i] = document.getElementById(`putt${i + 1}len`);
@@ -59,7 +60,8 @@ export const renderHole = function (
   gir,
   putts,
   penalties,
-  puttlengths
+  puttlengths,
+  sandsave
 ) {
   currentHoleLabel.value = `hole${index}`;
   scoreInput.value = `score${score}`;
@@ -67,6 +69,7 @@ export const renderHole = function (
   renderGir(gir, 1);
   puttsInput.value = `putts${putts}`;
   penaltyInput.value = `penalties${penalties}`;
+  sandSaveInput.value = `sandsave${sandsave}`;
   for (let i = 0; i < puttlengths.length; i++) {
     puttLenInputs[i].value = puttlengths[i];
   }

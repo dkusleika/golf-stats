@@ -18,9 +18,7 @@ const changeHole = function (direction) {
     newIndex = model.currentHole.index - 1;
   }
 
-  //console.log('change before', model.holes[0]);
   model.setCurrentHole(newIndex - 1);
-  //console.log('change after', model.holes[0]);
 
   statView.renderHole(
     model.currentHole.index,
@@ -29,7 +27,8 @@ const changeHole = function (direction) {
     model.currentHole.gir,
     model.currentHole.putts,
     model.currentHole.penalties,
-    model.currentHole.puttLengths
+    model.currentHole.puttLengths,
+    model.currentHole.sandsave
   );
 };
 
@@ -118,6 +117,8 @@ const controlGir = function (e) {
 const controlReset = function (event) {
   event.preventDefault();
   model.resetForm();
+  console.log(model.currentHole);
+  changeHole(1);
 };
 
 const init = function () {
