@@ -242,7 +242,7 @@ export const setCurrentHole = function (holeId) {
   getHolesFromLocalStorage();
   currentHole = holes[holeId];
   //set defaults, but don't change is dirty unless the user changes something
-  console.log('model', currentHole.isDirty);
+
   if (!currentHole.isDirty) {
     currentHole.score = currentHole.par;
     currentHole.fairway = 'fairway hit';

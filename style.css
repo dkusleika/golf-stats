@@ -24,7 +24,7 @@ body {
 h2.hole-number {
   /* text-align: center; */
   color: #2d6a4f;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.1rem;
   display: flex;
   gap: 1rem;
   justify-content: center;
@@ -32,6 +32,13 @@ h2.hole-number {
 
 .nav-icon {
   font-size: 2rem;
+}
+
+.parlabel {
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #2d6a4f;
+  font-weight: 700;
 }
 .form-group {
   display: flex;

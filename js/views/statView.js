@@ -5,6 +5,7 @@ const holeNav = document.querySelectorAll(
 const currentHoleLabel = document
   .querySelector('.hole-number')
   .querySelector('.hole-num');
+const parLabelInput = document.querySelector('.parlabel');
 const scoreInput = document.getElementById('score');
 const fairwayText = document.querySelector('.fairway-text');
 const fairwayInput = document.querySelector('.fairway-target');
@@ -54,6 +55,7 @@ export const addHandlerReset = function (handler) {
 };
 
 export const renderHole = function (
+  par,
   index,
   score,
   fairway,
@@ -64,6 +66,7 @@ export const renderHole = function (
   sandsave
 ) {
   currentHoleLabel.value = `hole${index}`;
+  parLabelInput.textContent = `Par: ${par}`;
   scoreInput.value = `score${score}`;
   renderFairway(fairway, 1);
   renderGir(gir, 1);

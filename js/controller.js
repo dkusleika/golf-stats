@@ -21,6 +21,7 @@ const changeHole = function (direction) {
   model.setCurrentHole(newIndex - 1);
 
   statView.renderHole(
+    model.currentHole.par,
     model.currentHole.index,
     model.currentHole.score,
     model.currentHole.fairway,
