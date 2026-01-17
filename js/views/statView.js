@@ -68,8 +68,8 @@ export const renderHole = function (
   currentHoleLabel.value = `hole${index}`;
   parLabelInput.textContent = `Par: ${par}`;
   scoreInput.value = `score${score}`;
-  renderFairway(fairway, 1);
-  renderGir(gir, 1);
+  renderFairway(fairway, par);
+  renderGir(gir);
   puttsInput.value = `putts${putts}`;
   penaltyInput.value = `penalties${penalties}`;
   sandSaveInput.value = `sandsave${sandsave}`;
@@ -81,11 +81,26 @@ export const renderHole = function (
   scoreInput.focus();
 };
 
-export const renderFairway = function (fairway) {
-  fairwayText.textContent = fairway;
-  document.querySelectorAll('.target-child__fairway').forEach(function (e) {
-    e.classList.remove('target-child-active');
-  });
+export const renderFairway = function (fairway, par) {
+  const fairways = document.querySelectorAll('.target-child__fairway');
+  const fairwayAnchors = document.querySelectorAll('.fairway-anchor');
+  if (par === 3) {
+    fairwayAnchors.forEach(function (e) {
+      e.classList.add('not-applicable');
+    });
+    fairways.forEach(function (e) {
+      e.classList.add('not-applicable');
+    });
+  } else {
+    fairwayText.textContent = fairway;
+    fairwayAnchors.forEach(function (e) {
+      e.classList.remove('not-applicable');
+    });
+    fairways.forEach(function (e) {
+      e.classList.remove('not-applicable');
+      e.classList.remove('target-child-active');
+    });
+  }
 
   document
     .querySelector(`[data-value="${fairway.replace(' trbl', '')}"]`)

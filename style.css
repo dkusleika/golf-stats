@@ -176,3 +176,17 @@ button[type='submit']:hover {
   font-size: 0.75rem;
   text-transform: uppercase;
 }
+
+.fairway-anchor.not-applicable {
+  pointer-events: none;
+  cursor: default;
+}
+
+.not-applicable {
+  fill: #777;
+  stroke: #333;
+}
+
+.not-applicable:hover {
+  fill: #777;
+}

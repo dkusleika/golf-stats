@@ -62,6 +62,7 @@ const controlFormChange = function (e) {
   } else {
     model.currentHole[e.target.id] = e.target.value.replace(e.target.id, '');
   }
+
   model.currentHole.isDirty = true;
 };
 
