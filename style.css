@@ -7,8 +7,61 @@ body {
   font-family: 'Segoe UI', Arial, sans-serif;
   background: linear-gradient(120deg, #e0eafc, #cfdef3);
   min-height: 100vh;
+}
+
+.scorecard_checkbox {
+  display: none;
+}
+
+main {
   display: flex;
   justify-content: center;
+}
+.scorecard {
+  width: 400px;
+  margin-left: 10rem;
+  padding: 0.2rem 0.2rem;
+  background: #fff;
+  display: none;
+}
+
+.card-row {
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+
+  gap: 0.1rem;
+  margin-top: 1rem;
+  /* padding: 1rem; */
+}
+
+.card-row-item {
+  display: grid;
+  place-items: center;
+  padding: 0.4rem 0.2rem;
+  outline: 1px solid #b7b7b7;
+  /* background-color: rgb(161, 206, 152); */
+  background-color: #fff;
+}
+
+.card-row-hole-number {
+  /* background-color: rgb(68, 160, 50); */
+  background-color: rgb(161, 206, 152);
+}
+.card-hole-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  font-size: x-small;
+  padding: 1px 1px;
+}
+
+.card-row-last {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 5fr 1fr 1fr;
+  gap: 1rem;
+  margin: 1rem 6rem;
+  justify-items: end;
+  background-color: rgb(161, 206, 152);
 }
 
 .golf-score-form {

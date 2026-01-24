@@ -78,7 +78,7 @@ export const renderHole = function (
   }
 
   showHideNav(index);
-  scoreInput.focus();
+  // scoreInput.focus();
 };
 
 export const renderFairway = function (fairway, par) {

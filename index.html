@@ -7,213 +7,520 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <form id="golfScoreForm" class="golf-score-form">
-      <h2 class="hole-number">
-        <a href="#" class="prev-hole hole-nav"
-          ><ion-icon
-            class="nav-icon"
-            name="chevron-back-circle-outline"
-          ></ion-icon
-        ></a>
-        <select class="hole-num hole-nav" id="holeSelect">
-          <option value="hole1">Hole 1</option>
-          <option value="hole2">Hole 2</option>
-          <option value="hole3">Hole 3</option>
-          <option value="hole4">Hole 4</option>
-          <option value="hole5">Hole 5</option>
-          <option value="hole6">Hole 6</option>
-          <option value="hole7">Hole 7</option>
-          <option value="hole8">Hole 8</option>
-          <option value="hole9">Hole 9</option>
-          <option value="hole10">Hole 10</option>
-          <option value="hole11">Hole 11</option>
-          <option value="hole12">Hole 12</option>
-          <option value="hole13">Hole 13</option>
-          <option value="hole14">Hole 14</option>
-          <option value="hole15">Hole 15</option>
-          <option value="hole16">Hole 16</option>
-          <option value="hole17">Hole 17</option>
-          <option value="hole18">Hole 18</option>
-        </select>
-        <a href="#" class="next-hole hole-nav"
-          ><ion-icon
-            class="nav-icon"
-            name="chevron-forward-circle-outline"
-          ></ion-icon
-        ></a>
-      </h2>
-      <div class="parlabel">Par: 4</div>
-      <div class="form-group">
-        <label for="score" class="form-label">Score:</label>
-        <select
-          type="number"
-          id="score"
-          name="score"
-          min="1"
-          class="form-input"
-          required
-        >
-          <option value="score1">1</option>
-          <option value="score2">2</option>
-          <option value="score3">3</option>
-          <option value="score4">4</option>
-          <option value="score5">5</option>
-          <option value="score6">6</option>
-          <option value="score7">7</option>
-          <option value="score8">8</option>
-          <option value="score9">9</option>
-          <option value="score10">10</option>
-          <option value="score11">11</option>
-          <option value="score12">12</option>
-          <option value="score13">13</option>
-          <option value="score14">14</option>
-          <option value="score15">15</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <!-- <label for="fairway" class="form-label">Fairway:</label> -->
-        <div class="target-container">
-          <svg
-            height="120"
-            width="120"
-            version="1.100"
-            id="Layer_1"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            viewBox="0 0 100 100"
-            class="target fairway-target"
-          >
-            <a href="#" class="fairway-anchor">
-              <path
-                d="M 55,55 l 0,-40 a 40,40 0 0,1 40,40 Z"
-                class="target-child target-outer target-outer-right target-child__fairway"
-                data-value="fairway right"
-              />
-            </a>
-            <a href="#" class="fairway-anchor">
-              <path
-                d="M 55,55 l 40,0 a 40,40 0 0,1 -40,40 Z"
-                class="target-child target-outer target-outer-short target-child__fairway"
-                data-value="fairway short"
-              />
-            </a>
-            <a href="#" class="fairway-anchor">
-              <path
-                d="M 55,55 l 0,40 a 40,40 0 0,1 -40,-40 Z"
-                class="target-child target-outer target-outer-left target-child__fairway"
-                data-value="fairway left"
-              />
-            </a>
-            <a href="#" class="fairway-anchor">
-              <path
-                d="M 55,55 l -40,0 a 40,40 0 0,1 40,-40 Z"
-                class="target-child target-outer target-outer-long target-child__fairway"
-                data-value="fairway long"
-              />
-            </a>
-            <path
-              id="fairway-text-line"
-              d="M 55,97 a 43,43 0 1,1 43,-43"
-              class="fairway-text-line"
-              fill="none"
-            />
-            <text>
-              <textPath
-                href="#fairway-text-line"
-                class="fairway-text target-text"
-                startOffset="50%"
-              >
-                Fairway
-              </textPath>
-            </text>
-            <a href="#" class="fairway-anchor">
-              <circle
-                cx="55"
-                cy="55"
-                r="23"
-                class="target-child target-inner target-child-active target-child__fairway"
-                data-value="fairway hit"
-              />
-            </a>
-          </svg>
+    <!-- <input type="checkbox" class="scorecard_checkbox" id="scorecard-toggle" />
+    <label for="scorecard_checkbox" class="scorecard_button">MENU</label> -->
+    <section class="scorecard">
+      <div class="card-row frontnine">
+        <div class="card-row-item card-row-hole-number">Hole:</div>
+        <div class="card-row-item card-row-hole-number">1</div>
+        <div class="card-row-item card-row-hole-number">2</div>
+        <div class="card-row-item card-row-hole-number">3</div>
+        <div class="card-row-item card-row-hole-number">4</div>
+        <div class="card-row-item card-row-hole-number">5</div>
+        <div class="card-row-item card-row-hole-number">6</div>
+        <div class="card-row-item card-row-hole-number">7</div>
+        <div class="card-row-item card-row-hole-number">8</div>
+        <div class="card-row-item card-row-hole-number">9</div>
+        <div class="card-row-item card-row-hole-number">Total</div>
+
+        <div class="card-row-item card-row-score">Score:</div>
+        <div class="card-row-item card-row-score">7</div>
+        <div class="card-row-item card-row-score">7</div>
+        <div class="card-row-item card-row-score">7</div>
+        <div class="card-row-item card-row-score">7</div>
+        <div class="card-row-item card-row-score">7</div>
+        <div class="card-row-item card-row-score">7</div>
+        <div class="card-row-item card-row-score">7</div>
+        <div class="card-row-item card-row-score">7</div>
+        <div class="card-row-item card-row-score">7</div>
+        <div class="card-row-item card-row-score">49</div>
+
+        <div class="card-row-item card-row-stats">Stats:</div>
+        <div class="card-row-item card-hole-stats">
+          <div class="card-hole-stats--fairway">o</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--gir">x</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--sandsave">$</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--putts">1</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--penalties">0</div>
         </div>
-        <!-- <select id="fairway" name="fairway" class="form-input" required>
+        <div class="card-row-item card-hole-stats">
+          <div class="card-hole-stats--fairway">o</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--gir">x</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--sandsave">$</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--putts">1</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--penalties">0</div>
+        </div>
+        <div class="card-row-item card-hole-stats">
+          <div class="card-hole-stats--fairway">o</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--gir">x</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--sandsave">$</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--putts">1</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--penalties">0</div>
+        </div>
+        <div class="card-row-item card-hole-stats">
+          <div class="card-hole-stats--fairway">o</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--gir">x</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--sandsave">$</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--putts">1</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--penalties">0</div>
+        </div>
+        <div class="card-row-item card-hole-stats">
+          <div class="card-hole-stats--fairway">o</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--gir">x</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--sandsave">$</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--putts">1</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--penalties">0</div>
+        </div>
+        <div class="card-row-item card-hole-stats">
+          <div class="card-hole-stats--fairway">o</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--gir">x</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--sandsave">$</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--putts">1</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--penalties">0</div>
+        </div>
+        <div class="card-row-item card-hole-stats">
+          <div class="card-hole-stats--fairway">o</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--gir">x</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--sandsave">$</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--putts">1</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--penalties">0</div>
+        </div>
+        <div class="card-row-item card-hole-stats">
+          <div class="card-hole-stats--fairway">o</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--gir">x</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--sandsave">$</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--putts">1</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--penalties">0</div>
+        </div>
+        <div class="card-row-item card-hole-stats">
+          <div class="card-hole-stats--fairway">o</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--gir">x</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--sandsave">$</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--putts">1</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--penalties">0</div>
+        </div>
+        <div class="card-row-item card-hole-stats">
+          <div class="card-hole-stats--fairway">9</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--gir">9</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--sandsave">9</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--putts">9</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--penalties">9</div>
+        </div>
+
+        <div class="card-row-item card-row-putts">Putts:</div>
+        <div class="card-row-item card-row-putts">3</div>
+        <div class="card-row-item card-row-putts">3</div>
+        <div class="card-row-item card-row-putts">3</div>
+        <div class="card-row-item card-row-putts">3</div>
+        <div class="card-row-item card-row-putts">3</div>
+        <div class="card-row-item card-row-putts">3</div>
+        <div class="card-row-item card-row-putts">3</div>
+        <div class="card-row-item card-row-putts">3</div>
+        <div class="card-row-item card-row-putts">3</div>
+        <div class="card-row-item card-row-putts">36</div>
+      </div>
+      <div class="card-row backnine">
+        <div class="card-row-item card-row-hole-number">Hole:</div>
+        <div class="card-row-item card-row-hole-number">10</div>
+        <div class="card-row-item card-row-hole-number">11</div>
+        <div class="card-row-item card-row-hole-number">12</div>
+        <div class="card-row-item card-row-hole-number">13</div>
+        <div class="card-row-item card-row-hole-number">14</div>
+        <div class="card-row-item card-row-hole-number">15</div>
+        <div class="card-row-item card-row-hole-number">16</div>
+        <div class="card-row-item card-row-hole-number">17</div>
+        <div class="card-row-item card-row-hole-number">18</div>
+        <div class="card-row-item card-row-hole-number">Total</div>
+
+        <div class="card-row-item card-row-score">Score:</div>
+        <div class="card-row-item card-row-score">7</div>
+        <div class="card-row-item card-row-score">7</div>
+        <div class="card-row-item card-row-score">7</div>
+        <div class="card-row-item card-row-score">7</div>
+        <div class="card-row-item card-row-score">7</div>
+        <div class="card-row-item card-row-score">7</div>
+        <div class="card-row-item card-row-score">7</div>
+        <div class="card-row-item card-row-score">7</div>
+        <div class="card-row-item card-row-score">7</div>
+        <div class="card-row-item card-row-score">49</div>
+
+        <div class="card-row-item card-row-stats">Stats:</div>
+        <div class="card-row-item card-hole-stats">
+          <div class="card-hole-stats--fairway">o</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--gir">x</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--sandsave">$</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--putts">1</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--penalties">0</div>
+        </div>
+        <div class="card-row-item card-hole-stats">
+          <div class="card-hole-stats--fairway">o</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--gir">x</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--sandsave">$</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--putts">1</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--penalties">0</div>
+        </div>
+        <div class="card-row-item card-hole-stats">
+          <div class="card-hole-stats--fairway">o</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--gir">x</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--sandsave">$</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--putts">1</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--penalties">0</div>
+        </div>
+        <div class="card-row-item card-hole-stats">
+          <div class="card-hole-stats--fairway">o</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--gir">x</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--sandsave">$</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--putts">1</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--penalties">0</div>
+        </div>
+        <div class="card-row-item card-hole-stats">
+          <div class="card-hole-stats--fairway">o</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--gir">x</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--sandsave">$</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--putts">1</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--penalties">0</div>
+        </div>
+        <div class="card-row-item card-hole-stats">
+          <div class="card-hole-stats--fairway">o</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--gir">x</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--sandsave">$</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--putts">1</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--penalties">0</div>
+        </div>
+        <div class="card-row-item card-hole-stats">
+          <div class="card-hole-stats--fairway">o</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--gir">x</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--sandsave">$</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--putts">1</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--penalties">0</div>
+        </div>
+        <div class="card-row-item card-hole-stats">
+          <div class="card-hole-stats--fairway">o</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--gir">x</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--sandsave">$</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--putts">1</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--penalties">0</div>
+        </div>
+        <div class="card-row-item card-hole-stats">
+          <div class="card-hole-stats--fairway">o</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--gir">x</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--sandsave">$</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--putts">1</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--penalties">0</div>
+        </div>
+        <div class="card-row-item card-hole-stats">
+          <div class="card-hole-stats--fairway">9</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--gir">9</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--sandsave">9</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--putts">9</div>
+          <div class="card-hole-stats--spacer">&nbsp;</div>
+          <div class="card-hole-stats--penalties">9</div>
+        </div>
+
+        <div class="card-row-item card-row-putts">Putts:</div>
+        <div class="card-row-item card-row-putts">3</div>
+        <div class="card-row-item card-row-putts">3</div>
+        <div class="card-row-item card-row-putts">3</div>
+        <div class="card-row-item card-row-putts">3</div>
+        <div class="card-row-item card-row-putts">3</div>
+        <div class="card-row-item card-row-putts">3</div>
+        <div class="card-row-item card-row-putts">3</div>
+        <div class="card-row-item card-row-putts">3</div>
+        <div class="card-row-item card-row-putts">3</div>
+        <div class="card-row-item card-row-putts">36</div>
+      </div>
+      <div class="card-row-last summary">
+        <span class="summary-label">Score:</span
+        ><span class="summary-value summary-value--score">98</span
+        ><span class="summary-value summary-pct--score">72</span>
+        <span class="summary-label">Fairways:</span>
+        <span class="summary-value summary-value--fairways">18</span
+        ><span class="summary-value summary-pct--fairways">100%</span>
+        <span class="summary-label">GIR:</span
+        ><span class="summary-value summary-value--GIRs">18</span
+        ><span class="summary-value summary-pct--GIRs">100%</span>
+        <span class="summary-label">Putts:</span
+        ><span class="summary-value summary-value--putts">18</span
+        ><span class="summary-value summary-pct--putts">100%</span>
+        <span class="summary-label">Penalties:</span
+        ><span class="summary-value summary-value--penalties">18</span
+        ><span class="summary-value summary-pct--penalties">100%</span>
+        <span class="summary-label">Sandies:</span
+        ><span class="summary-value summary-value--sandsaves">18</span
+        ><span class="summary-value summary-pct--sandsaves">100%</span>
+        <span class="summary-label">Putts Made:</span
+        ><span class="summary-value summary-value--puttsmade">18</span
+        ><span class="summary-value summary-pct--puttsmade">100%</span>
+      </div>
+    </section>
+    <main>
+      <form id="golfScoreForm" class="golf-score-form">
+        <h2 class="hole-number">
+          <a href="#" class="prev-hole hole-nav"
+            ><ion-icon
+              class="nav-icon"
+              name="chevron-back-circle-outline"></ion-icon
+          ></a>
+          <select class="hole-num hole-nav" id="holeSelect">
+            <option value="hole1">Hole 1</option>
+            <option value="hole2">Hole 2</option>
+            <option value="hole3">Hole 3</option>
+            <option value="hole4">Hole 4</option>
+            <option value="hole5">Hole 5</option>
+            <option value="hole6">Hole 6</option>
+            <option value="hole7">Hole 7</option>
+            <option value="hole8">Hole 8</option>
+            <option value="hole9">Hole 9</option>
+            <option value="hole10">Hole 10</option>
+            <option value="hole11">Hole 11</option>
+            <option value="hole12">Hole 12</option>
+            <option value="hole13">Hole 13</option>
+            <option value="hole14">Hole 14</option>
+            <option value="hole15">Hole 15</option>
+            <option value="hole16">Hole 16</option>
+            <option value="hole17">Hole 17</option>
+            <option value="hole18">Hole 18</option>
+          </select>
+          <a href="#" class="next-hole hole-nav"
+            ><ion-icon
+              class="nav-icon"
+              name="chevron-forward-circle-outline"></ion-icon
+          ></a>
+        </h2>
+        <div class="parlabel">Par: 4</div>
+        <div class="form-group">
+          <label for="score" class="form-label">Score:</label>
+          <select
+            type="number"
+            id="score"
+            name="score"
+            min="1"
+            class="form-input"
+            required>
+            <option value="score1">1</option>
+            <option value="score2">2</option>
+            <option value="score3">3</option>
+            <option value="score4">4</option>
+            <option value="score5">5</option>
+            <option value="score6">6</option>
+            <option value="score7">7</option>
+            <option value="score8">8</option>
+            <option value="score9">9</option>
+            <option value="score10">10</option>
+            <option value="score11">11</option>
+            <option value="score12">12</option>
+            <option value="score13">13</option>
+            <option value="score14">14</option>
+            <option value="score15">15</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <!-- <label for="fairway" class="form-label">Fairway:</label> -->
+          <div class="target-container">
+            <svg
+              height="120"
+              width="120"
+              version="1.100"
+              id="Layer_1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 100 100"
+              class="target fairway-target">
+              <a href="#" class="fairway-anchor">
+                <path
+                  d="M 55,55 l 0,-40 a 40,40 0 0,1 40,40 Z"
+                  class="target-child target-outer target-outer-right target-child__fairway"
+                  data-value="fairway right" />
+              </a>
+              <a href="#" class="fairway-anchor">
+                <path
+                  d="M 55,55 l 40,0 a 40,40 0 0,1 -40,40 Z"
+                  class="target-child target-outer target-outer-short target-child__fairway"
+                  data-value="fairway short" />
+              </a>
+              <a href="#" class="fairway-anchor">
+                <path
+                  d="M 55,55 l 0,40 a 40,40 0 0,1 -40,-40 Z"
+                  class="target-child target-outer target-outer-left target-child__fairway"
+                  data-value="fairway left" />
+              </a>
+              <a href="#" class="fairway-anchor">
+                <path
+                  d="M 55,55 l -40,0 a 40,40 0 0,1 40,-40 Z"
+                  class="target-child target-outer target-outer-long target-child__fairway"
+                  data-value="fairway long" />
+              </a>
+              <path
+                id="fairway-text-line"
+                d="M 55,97 a 43,43 0 1,1 43,-43"
+                class="fairway-text-line"
+                fill="none" />
+              <text>
+                <textPath
+                  href="#fairway-text-line"
+                  class="fairway-text target-text"
+                  startOffset="50%">
+                  Fairway
+                </textPath>
+              </text>
+              <a href="#" class="fairway-anchor">
+                <circle
+                  cx="55"
+                  cy="55"
+                  r="23"
+                  class="target-child target-inner target-child-active target-child__fairway"
+                  data-value="fairway hit" />
+              </a>
+            </svg>
+          </div>
+          <!-- <select id="fairway" name="fairway" class="form-input" required>
           <option value="hit">Hit</option>
           <option value="missed_left">Missed Left</option>
           <option value="missed_right">Missed Right</option>
           <option value="penalty_left">Penalty Left</option>
           <option value="penalty_right">Penalty Right</option>
         </select> -->
-      </div>
-      <div class="form-group">
-        <!-- <label for="fairway" class="form-label">Fairway:</label> -->
-        <div class="target-container">
-          <svg
-            height="120"
-            width="120"
-            version="1.100"
-            id="Layer_1"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            viewBox="0 0 100 100"
-            class="target gir-target"
-          >
-            <a href="#">
-              <path
-                d="M 55,55 l 0,-40 a 40,40 0 0,1 40,40 Z"
-                class="target-child target-outer target-outer-right target-child__gir"
-                data-value="gir right"
-              />
-            </a>
-            <a href="#">
-              <path
-                d="M 55,55 l 40,0 a 40,40 0 0,1 -40,40 Z"
-                class="target-child target-outer target-outer-short target-child__gir"
-                data-value="gir short"
-              />
-            </a>
-            <a href="#">
-              <path
-                d="M 55,55 l 0,40 a 40,40 0 0,1 -40,-40 Z"
-                class="target-child target-outer target-outer-left target-child__gir"
-                data-value="gir left"
-              />
-            </a>
-            <a href="#">
-              <path
-                d="M 55,55 l -40,0 a 40,40 0 0,1 40,-40 Z"
-                class="target-child target-outer target-outer-long target-child__gir"
-                data-value="gir long"
-              />
-            </a>
-            <path
-              id="gir-text-line"
-              d="M 55,97 a 43,43 0 1,1 43,-43"
-              class="gir-text-line"
-              fill="none"
-            />
-            <text>
-              <textPath
-                href="#gir-text-line"
-                class="gir-text target-text"
-                startOffset="50%"
-              >
-                GIR Hit
-              </textPath>
-            </text>
-            <a href="#">
-              <circle
-                cx="55"
-                cy="55"
-                r="23"
-                class="target-child target-inner target-child-active target-child__gir"
-                data-value="gir hit"
-              />
-            </a>
-          </svg>
         </div>
-      </div>
-      <!-- <div class="form-group">
+        <div class="form-group">
+          <!-- <label for="fairway" class="form-label">Fairway:</label> -->
+          <div class="target-container">
+            <svg
+              height="120"
+              width="120"
+              version="1.100"
+              id="Layer_1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 100 100"
+              class="target gir-target">
+              <a href="#">
+                <path
+                  d="M 55,55 l 0,-40 a 40,40 0 0,1 40,40 Z"
+                  class="target-child target-outer target-outer-right target-child__gir"
+                  data-value="gir right" />
+              </a>
+              <a href="#">
+                <path
+                  d="M 55,55 l 40,0 a 40,40 0 0,1 -40,40 Z"
+                  class="target-child target-outer target-outer-short target-child__gir"
+                  data-value="gir short" />
+              </a>
+              <a href="#">
+                <path
+                  d="M 55,55 l 0,40 a 40,40 0 0,1 -40,-40 Z"
+                  class="target-child target-outer target-outer-left target-child__gir"
+                  data-value="gir left" />
+              </a>
+              <a href="#">
+                <path
+                  d="M 55,55 l -40,0 a 40,40 0 0,1 40,-40 Z"
+                  class="target-child target-outer target-outer-long target-child__gir"
+                  data-value="gir long" />
+              </a>
+              <path
+                id="gir-text-line"
+                d="M 55,97 a 43,43 0 1,1 43,-43"
+                class="gir-text-line"
+                fill="none" />
+              <text>
+                <textPath
+                  href="#gir-text-line"
+                  class="gir-text target-text"
+                  startOffset="50%">
+                  GIR Hit
+                </textPath>
+              </text>
+              <a href="#">
+                <circle
+                  cx="55"
+                  cy="55"
+                  r="23"
+                  class="target-child target-inner target-child-active target-child__gir"
+                  data-value="gir hit" />
+              </a>
+            </svg>
+          </div>
+        </div>
+        <!-- <div class="form-group">
         <label for="gir" class="form-label">GIR:</label>
         <select id="gir" name="GIR" class="form-input" required>
           <option value="hit">Hit</option>
@@ -223,60 +530,83 @@
           <option value="missed_long">Penalty Long</option>
         </select>
       </div> -->
-      <div class="form-group">
-        <label for="putts" class="form-label">Putts:</label>
-        <select id="putts" name="putts" class="form-input" required>
-          <option value="putts2">2</option>
-          <option value="putts1">1</option>
-          <option value="putts3">3</option>
-          <option value="putts4">4</option>
-          <option value="putts5">5</option>
-          <option value="putts0">0</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="penalties" class="form-label">Penalties:</label>
-        <select id="penalties" name="penalties" class="form-input" required>
-          <option value="penalties0">0</option>
-          <option value="penalties1">1</option>
-          <option value="penalties2">2</option>
-          <option value="penalties3">3</option>
-          <option value="penalties4">4</option>
-          <option value="penalties5">5</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="sandsave" class="form-label">Sandy:</label>
-        <select id="sandsave" name="sandsave" class="form-input" required>
-          <option value="sandsaveN/A">N/A</option>
-          <option value="sandsaveYes">Yes</option>
-          <option value="sandsaveNo">No</option>
-        </select>
-      </div>
-      <div class="puttlen-container">
-        <p class="putt-len-text">Putt Lengths:</p>
-        <div class="putt-len-row putt-len-row__1">
-          <input type="number" id="putt1len" name="putt1len" class="putt-len" />
-          <input type="number" id="putt2len" name="putt2len" class="putt-len" />
-          <input type="number" id="putt3len" name="putt3len" class="putt-len" />
+        <div class="form-group">
+          <label for="putts" class="form-label">Putts:</label>
+          <select id="putts" name="putts" class="form-input" required>
+            <option value="putts2">2</option>
+            <option value="putts1">1</option>
+            <option value="putts3">3</option>
+            <option value="putts4">4</option>
+            <option value="putts5">5</option>
+            <option value="putts0">0</option>
+          </select>
         </div>
-        <div class="putt-len-row putt-len-row__2">
-          <input type="number" id="putt4len" name="putt4len" class="putt-len" />
-          <input type="number" id="putt5len" name="putt5len" class="putt-len" />
-          <input type="number" id="putt6len" name="putt6len" class="putt-len" />
+        <div class="form-group">
+          <label for="penalties" class="form-label">Penalties:</label>
+          <select id="penalties" name="penalties" class="form-input" required>
+            <option value="penalties0">0</option>
+            <option value="penalties1">1</option>
+            <option value="penalties2">2</option>
+            <option value="penalties3">3</option>
+            <option value="penalties4">4</option>
+            <option value="penalties5">5</option>
+          </select>
         </div>
-      </div>
-      <!-- <button type="submit" class="submit">Submit</button> -->
-      <button type="submit" class="reset">Reset</button>
-    </form>
+        <div class="form-group">
+          <label for="sandsave" class="form-label">Sandy:</label>
+          <select id="sandsave" name="sandsave" class="form-input" required>
+            <option value="sandsaveN/A">N/A</option>
+            <option value="sandsaveYes">Yes</option>
+            <option value="sandsaveNo">No</option>
+          </select>
+        </div>
+        <div class="puttlen-container">
+          <p class="putt-len-text">Putt Lengths:</p>
+          <div class="putt-len-row putt-len-row__1">
+            <input
+              type="number"
+              id="putt1len"
+              name="putt1len"
+              class="putt-len" />
+            <input
+              type="number"
+              id="putt2len"
+              name="putt2len"
+              class="putt-len" />
+            <input
+              type="number"
+              id="putt3len"
+              name="putt3len"
+              class="putt-len" />
+          </div>
+          <div class="putt-len-row putt-len-row__2">
+            <input
+              type="number"
+              id="putt4len"
+              name="putt4len"
+              class="putt-len" />
+            <input
+              type="number"
+              id="putt5len"
+              name="putt5len"
+              class="putt-len" />
+            <input
+              type="number"
+              id="putt6len"
+              name="putt6len"
+              class="putt-len" />
+          </div>
+        </div>
+        <!-- <button type="submit" class="submit">Submit</button> -->
+        <button type="submit" class="reset">Reset</button>
+      </form>
+    </main>
     <script
       type="module"
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-    ></script>
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script
       nomodule
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-    ></script>
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script type="module" src="js/controller.js"></script>
   </body>
 </html>
