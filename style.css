@@ -7,8 +7,71 @@ body {
   font-family: 'Segoe UI', Arial, sans-serif;
   background: linear-gradient(120deg, #e0eafc, #cfdef3);
   min-height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
 }
 
+.nav__hamburger {
+  position: fixed;
+  height: 1.5rem;
+  width: 1.5rem;
+  z-index: 100;
+  top: 1rem;
+  right: 1rem;
+  padding: 4px;
+  border: black solid 1px;
+  background: white;
+  cursor: pointer;
+}
+
+.nav__close {
+  position: fixed;
+  height: 1.5rem;
+  width: 1.5rem;
+  z-index: 100;
+  top: 1rem;
+  right: 1rem;
+  padding: 4px;
+  border: black solid 1px;
+  background: white;
+  cursor: pointer;
+}
+
+.nav__hidden {
+  display: none;
+}
+
+.menu {
+  position: fixed;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: #2d6a4f;
+  color: white;
+  list-style: none;
+  padding-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu-item {
+  display: inline-block;
+  margin: 1rem 0;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+  padding: 1rem;
+}
+
+.showmenu {
+  transform: translateY(0);
+  z-index: 99;
+}
 .scorecard_checkbox {
   display: none;
 }
@@ -19,10 +82,12 @@ main {
 }
 .scorecard {
   width: 400px;
-  margin-left: 10rem;
   padding: 0.2rem 0.2rem;
   background: #fff;
-  display: none;
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
 }
 
 .card-row {
@@ -72,6 +137,7 @@ main {
   border-radius: 16px;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
   width: 400px;
+  position: relative;
 }
 
 h2.hole-number {
@@ -81,6 +147,10 @@ h2.hole-number {
   display: flex;
   gap: 1rem;
   justify-content: center;
+  position: fixed;
+  top: 2%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .nav-icon {
@@ -161,6 +231,10 @@ h2.hole-number {
 }
 .hidden {
   visibility: hidden;
+}
+
+.nodisplay {
+  display: none;
 }
 
 .hole-nav {

@@ -1,6 +1,15 @@
+const hamburger = document.querySelector('.nav__hamburger');
+const menuclose = document.querySelector('.nav__close');
+const menu = document.querySelector('.menu');
+const menuItems = document.querySelectorAll('.menu-item');
+const menuItemScorecard = document.querySelector('.menu-item-scorecard');
+const menuItemResetGame = document.querySelector('.menu-item-reset-game');
+
+const scorecard = document.querySelector('.scorecard');
+
 const form = document.querySelector('.golf-score-form');
 const holeNav = document.querySelectorAll(
-  '.hole-nav.next-hole, .hole-nav.prev-hole'
+  '.hole-nav.next-hole, .hole-nav.prev-hole',
 );
 const currentHoleLabel = document
   .querySelector('.hole-number')
@@ -19,7 +28,26 @@ for (let i = 0; i < 6; i++) {
   puttLenInputs[i] = document.getElementById(`putt${i + 1}len`);
 }
 
-const resetButton = document.querySelector('.reset');
+const toggleMenu = function () {
+  menu.classList.toggle('showmenu');
+  menuclose.classList.toggle('nav__hidden');
+  hamburger.classList.toggle('nav__hidden');
+};
+
+hamburger.addEventListener('click', toggleMenu);
+menuclose.addEventListener('click', toggleMenu);
+menuItems.forEach(function (item) {
+  item.addEventListener('click', toggleMenu);
+});
+
+menuItemScorecard.addEventListener('click', function (e) {
+  e.preventDefault();
+  scorecard.classList.toggle('nodisplay');
+  form.classList.toggle('nodisplay');
+  menuItemScorecard.textContent = scorecard.classList.contains('nodisplay')
+    ? 'Scorecard'
+    : 'Stats';
+});
 
 export const addHandlerFormChange = function (handler) {
   form.addEventListener('change', handler);
@@ -51,7 +79,7 @@ export const addHandlerGir = function (handler) {
 };
 
 export const addHandlerReset = function (handler) {
-  resetButton.addEventListener('click', handler);
+  menuItemResetGame.addEventListener('click', handler);
 };
 
 export const renderHole = function (
@@ -63,7 +91,7 @@ export const renderHole = function (
   putts,
   penalties,
   puttlengths,
-  sandsave
+  sandsave,
 ) {
   currentHoleLabel.value = `hole${index}`;
   parLabelInput.textContent = `Par: ${par}`;
@@ -76,9 +104,7 @@ export const renderHole = function (
   for (let i = 0; i < puttlengths.length; i++) {
     puttLenInputs[i].value = puttlengths[i];
   }
-
   showHideNav(index);
-  // scoreInput.focus();
 };
 
 export const renderFairway = function (fairway, par) {

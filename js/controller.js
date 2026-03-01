@@ -29,7 +29,7 @@ const changeHole = function (direction) {
     model.currentHole.putts,
     model.currentHole.penalties,
     model.currentHole.puttLengths,
-    model.currentHole.sandsave
+    model.currentHole.sandsave,
   );
 };
 

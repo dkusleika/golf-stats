@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,9 +7,43 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <ul class="menu">
+      <li><a href="#" class="menu-item menu-item-scorecard">Scorecard</a></li>
+      <li><a href="#" class="menu-item menu-item-reset-game">Reset Game</a></li>
+      <li><a href="#" class="menu-item menu-item-reset-hole">Reset Hole</a></li>
+      <li><a href="#" class="menu-item menu-item-help">Help</a></li>
+    </ul>
+    <button class="nav__hamburger">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6">
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+      </svg>
+    </button>
+    <button class="nav__close nav__hidden">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6">
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M6 18 18 6M6 6l12 12" />
+      </svg>
+    </button>
     <!-- <input type="checkbox" class="scorecard_checkbox" id="scorecard-toggle" />
     <label for="scorecard_checkbox" class="scorecard_button">MENU</label> -->
-    <section class="scorecard">
+    <section class="scorecard nodisplay">
       <div class="card-row frontnine">
         <div class="card-row-item card-row-hole-number">Hole:</div>
         <div class="card-row-item card-row-hole-number">1</div>
@@ -597,8 +631,6 @@
               class="putt-len" />
           </div>
         </div>
-        <!-- <button type="submit" class="submit">Submit</button> -->
-        <button type="submit" class="reset">Reset</button>
       </form>
     </main>
     <script
