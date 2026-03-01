@@ -4,6 +4,7 @@ const menu = document.querySelector('.menu');
 const menuItems = document.querySelectorAll('.menu-item');
 const menuItemScorecard = document.querySelector('.menu-item-scorecard');
 const menuItemResetGame = document.querySelector('.menu-item-reset-game');
+const menuItemResetHole = document.querySelector('.menu-item-reset-hole');
 
 const scorecard = document.querySelector('.scorecard');
 
@@ -48,6 +49,14 @@ menuItemScorecard.addEventListener('click', function (e) {
     ? 'Scorecard'
     : 'Stats';
 });
+
+export const addHandlerMenuItemResetGame = function (handler) {
+  menuItemResetGame.addEventListener('click', handler);
+};
+
+export const addHandlerMenuItemResetHole = function (handler) {
+  menuItemResetHole.addEventListener('click', handler);
+};
 
 export const addHandlerFormChange = function (handler) {
   form.addEventListener('change', handler);

@@ -257,17 +257,21 @@ export const setCurrentHole = function (holeId) {
 export const resetForm = function () {
   localStorage.removeItem('golfHoles');
   holes.forEach(function (hole) {
-    hole.score = '';
-    hole.fairway = 'fairway hit';
-    hole.gir = 'gir hit';
-    hole.putts = '';
-    hole.penalties = '';
-    hole.sandsave = '';
-    for (let i = 0; i < 5; i++) {
-      hole.puttLengths[i] = '';
-    }
-    hole.isDirty = 0;
+    resetHole(hole);
   });
+};
+
+export const resetHole = function (hole) {
+  hole.score = '';
+  hole.fairway = 'fairway hit';
+  hole.gir = 'gir hit';
+  hole.putts = '';
+  hole.penalties = '';
+  hole.sandsave = '';
+  for (let i = 0; i < 5; i++) {
+    hole.puttLengths[i] = '';
+  }
+  hole.isDirty = 0;
 };
 
 // Retrieve holes array from localStorage

@@ -116,11 +116,16 @@ const controlGir = function (e) {
   setGir(e.target.closest('.target-child__gir').dataset.value, 0);
 };
 
-const controlReset = function (event) {
-  event.preventDefault();
+const controlMenuItemResetGame = function (e) {
+  e.preventDefault;
   model.resetForm();
-  console.log(model.currentHole);
   changeHole(1);
+};
+
+const controlMenuItemResetHole = function (e) {
+  e.preventDefault;
+  model.resetHole(model.currentHole);
+  changeHole(model.currentHole.index);
 };
 
 const init = function () {
@@ -131,8 +136,8 @@ const init = function () {
   statView.addHandlerCurrentHole(controlCurrentHole);
   statView.addHandlerFairway(controlFairway);
   statView.addHandlerGir(controlGir);
-  statView.addHandlerReset(controlReset);
-
+  statView.addHandlerMenuItemResetGame(controlMenuItemResetGame);
+  statView.addHandlerMenuItemResetHole(controlMenuItemResetHole);
   changeHole(1);
 };
 init();
