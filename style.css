@@ -129,6 +129,44 @@ main {
   background-color: rgb(161, 206, 152);
 }
 
+.help {
+  width: 400px;
+  padding: 0.2rem 0.2rem;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+.helpTitle {
+  text-align: center;
+  color: #2d6a4f;
+  margin-bottom: 1rem;
+}
+
+.helpSubtitle {
+  text-align: center;
+  color: #2d6a4f;
+  margin-bottom: 0.5rem;
+}
+
+.helpText {
+  padding: 1rem 3rem;
+  color: #333;
+  line-height: 1.5;
+  list-style: none;
+}
+
+.helpText li {
+  margin-bottom: 0.5rem;
+}
+
+.helpInnerList {
+  list-style: disc;
+  padding-left: 2rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
 .golf-score-form {
   display: flex;
   flex-direction: column;

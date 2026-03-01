@@ -8,9 +8,10 @@
   </head>
   <body>
     <ul class="menu">
+      <li><a href="#" class="menu-item menu-item-stats">Stats</a></li>
       <li><a href="#" class="menu-item menu-item-scorecard">Scorecard</a></li>
-      <li><a href="#" class="menu-item menu-item-reset-game">Reset Game</a></li>
       <li><a href="#" class="menu-item menu-item-reset-hole">Reset Hole</a></li>
+      <li><a href="#" class="menu-item menu-item-reset-game">Reset Game</a></li>
       <li><a href="#" class="menu-item menu-item-help">Help</a></li>
     </ul>
     <button class="nav__hamburger">
@@ -365,6 +366,38 @@
         ><span class="summary-value summary-value--puttsmade">18</span
         ><span class="summary-value summary-pct--puttsmade">100%</span>
       </div>
+    </section>
+    <section class="help nodisplay">
+      <h1 class="helpTitle">Help</h1>
+      <h2 class="helpSubtitle">Stats View</h2>
+      <ul class="helpText">
+        <li>
+          You can navigate between holes via:
+
+          <ul class="helpInnerList">
+            <li>Dropdown menu</li>
+            <li>Arrow buttons</li>
+            <li>Swiping on a touch device</li>
+          </ul>
+        </li>
+        <li>
+          Tap the fairway or green targets for misses left, right, long, or
+          short. Tap twice to indicate a miss that resulted in a penatly or
+          otherwise cost you a stroke.
+        </li>
+        <li>
+          Enter up to six putt lengths in whatever units you prefer. If you have
+          more than six putts, you should have picked up sooner.
+        </li>
+      </ul>
+      <h2 class="helpSubtitle">Scorecard View</h2>
+      <ul class="helpText">
+        <li>Top left is a fairway hit.</li>
+        <li>Top right is a green in regulation.</li>
+        <li>Middle is a sand save or missed sand save.</li>
+        <li>Bottom left is the number of putts</li>
+        <li>Bottom right is the number of penalties</li>
+      </ul>
     </section>
     <main>
       <form id="golfScoreForm" class="golf-score-form">

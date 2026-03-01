@@ -2,11 +2,14 @@ const hamburger = document.querySelector('.nav__hamburger');
 const menuclose = document.querySelector('.nav__close');
 const menu = document.querySelector('.menu');
 const menuItems = document.querySelectorAll('.menu-item');
+const menuItemStats = document.querySelector('.menu-item-stats');
 const menuItemScorecard = document.querySelector('.menu-item-scorecard');
 const menuItemResetGame = document.querySelector('.menu-item-reset-game');
 const menuItemResetHole = document.querySelector('.menu-item-reset-hole');
+const menuItemHelp = document.querySelector('.menu-item-help');
 
 const scorecard = document.querySelector('.scorecard');
+const help = document.querySelector('.help');
 
 const form = document.querySelector('.golf-score-form');
 const holeNav = document.querySelectorAll(
@@ -41,13 +44,18 @@ menuItems.forEach(function (item) {
   item.addEventListener('click', toggleMenu);
 });
 
+menuItemStats.addEventListener('click', function (e) {
+  e.preventDefault();
+  scorecard.classList.add('nodisplay');
+  form.classList.remove('nodisplay');
+  help.classList.add('nodisplay');
+});
+
 menuItemScorecard.addEventListener('click', function (e) {
   e.preventDefault();
-  scorecard.classList.toggle('nodisplay');
-  form.classList.toggle('nodisplay');
-  menuItemScorecard.textContent = scorecard.classList.contains('nodisplay')
-    ? 'Scorecard'
-    : 'Stats';
+  scorecard.classList.remove('nodisplay');
+  form.classList.add('nodisplay');
+  help.classList.add('nodisplay');
 });
 
 export const addHandlerMenuItemResetGame = function (handler) {
@@ -57,6 +65,13 @@ export const addHandlerMenuItemResetGame = function (handler) {
 export const addHandlerMenuItemResetHole = function (handler) {
   menuItemResetHole.addEventListener('click', handler);
 };
+
+menuItemHelp.addEventListener('click', function (e) {
+  e.preventDefault();
+  scorecard.classList.add('nodisplay');
+  form.classList.add('nodisplay');
+  help.classList.remove('nodisplay');
+});
 
 export const addHandlerFormChange = function (handler) {
   form.addEventListener('change', handler);
