@@ -1,5 +1,6 @@
 import * as model from './model.js';
 import * as statView from './views/statView.js';
+import * as cardView from './views/cardView.js';
 
 // const submitButton = document.querySelector('.submit');
 
@@ -30,6 +31,7 @@ const changeHole = function (direction) {
     model.currentHole.penalties,
     model.currentHole.puttLengths,
     model.currentHole.sandsave,
+    model.currentHole.isDirty,
   );
 };
 
@@ -63,7 +65,10 @@ const controlFormChange = function (e) {
     model.currentHole[e.target.id] = e.target.value.replace(e.target.id, '');
   }
 
-  model.currentHole.isDirty = true;
+  if (e.target.id !== 'holeSelect') {
+    model.currentHole.isDirty = true;
+  }
+  renderCard();
 };
 
 const controlFormTouchStart = function (event) {
@@ -108,12 +113,24 @@ const controlFairway = function (e) {
   e.preventDefault;
   model.currentHole.isDirty = true;
   setFairway(e.target.closest('.target-child').dataset.value, 0);
+  renderCard();
 };
 
 const controlGir = function (e) {
   e.preventDefault;
   model.currentHole.isDirty = true;
   setGir(e.target.closest('.target-child__gir').dataset.value, 0);
+  renderCard();
+};
+
+const renderCard = function () {
+  if (model.currentHole.isDirty) {
+    cardView.renderCard(
+      model.dirtyPar(),
+      model.currentHole.index,
+      model.currentHole.score,
+    );
+  }
 };
 
 const controlMenuItemResetGame = function (e) {

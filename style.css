@@ -5,7 +5,6 @@
 }
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
-  background: linear-gradient(120deg, #e0eafc, #cfdef3);
   min-height: 100vh;
   position: relative;
   display: flex;
@@ -82,7 +81,7 @@ main {
 }
 .scorecard {
   width: 400px;
-  padding: 0.2rem 0.2rem;
+  padding: 2rem 0.2rem;
   background: #fff;
   display: flex;
   flex-direction: column;
@@ -171,7 +170,7 @@ main {
   display: flex;
   flex-direction: column;
   background: #fff;
-  padding: 2rem 2.5rem;
+  padding: 4rem 2.5rem;
   border-radius: 16px;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
   width: 400px;
@@ -189,6 +188,9 @@ h2.hole-number {
   top: 2%;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 99;
+  background-color: #fff;
+  opacity: 0.8;
 }
 
 .nav-icon {

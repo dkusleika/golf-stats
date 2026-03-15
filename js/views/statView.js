@@ -116,6 +116,7 @@ export const renderHole = function (
   penalties,
   puttlengths,
   sandsave,
+  isdirty,
 ) {
   currentHoleLabel.value = `hole${index}`;
   parLabelInput.textContent = `Par: ${par}`;

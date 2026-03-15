@@ -289,3 +289,11 @@ function getHolesFromLocalStorage() {
 function saveHolesToLocalStorage() {
   localStorage.setItem('golfHoles', JSON.stringify(holes));
 }
+
+export const dirtyPar = function () {
+  let par = 0;
+  holes.forEach(function (hole) {
+    par += hole.isDirty ? hole.par : 0;
+  });
+  return par;
+};
