@@ -245,12 +245,71 @@ export const setCurrentHole = function (holeId) {
 
   if (!currentHole.isDirty) {
     currentHole.score = currentHole.par;
-    currentHole.fairway = 'fairway hit';
+    currentHole.fairway = currentHole.par === 3 ? 'N/A' : 'fairway hit';
     currentHole.gir = 'gir hit';
     currentHole.putts = 2;
     currentHole.penalties = 0;
     currentHole.sandsave = 'N/A';
   }
+};
+
+export const cumulativeStats = function () {
+  const output = {
+    score: {
+      front: 0,
+      back: 0,
+      pct: 0,
+    },
+    fairway: {
+      front: 0,
+      back: 0,
+      pct: 0,
+    },
+    gir: {
+      front: 0,
+      back: 0,
+      pct: 0,
+    },
+    sandsave: {
+      front: 0,
+      back: 0,
+      pct: 0,
+    },
+    putts: {
+      front: 0,
+      back: 0,
+      pct: 0,
+    },
+    penalties: {
+      front: 0,
+      back: 0,
+      pct: 0,
+    },
+    puttsmade: {
+      total: 0,
+    },
+  };
+  holes.forEach(function (hole) {
+    if (hole.isDirty) {
+      output.score[hole.index <= 9 ? 'front' : 'back'] += +hole.score;
+      output.score.pct += hole.isDirty ? +hole.par : 0;
+      output.fairway[hole.index <= 9 ? 'front' : 'back'] +=
+        hole.fairway === 'fairway hit' ? 1 : 0;
+      output.fairway.pct += hole.par !== 3 && hole.isDirty ? 1 : 0;
+      output.gir[hole.index <= 9 ? 'front' : 'back'] +=
+        hole.gir === 'gir hit' ? 1 : 0;
+      output.gir.pct += hole.isDirty ? 1 : 0;
+      output.sandsave[hole.index <= 9 ? 'front' : 'back'] +=
+        hole.sandsave === 'Yes' ? 1 : 0;
+      output.sandsave.pct += hole.sandsave !== 'N/A' && hole.isDirty ? 1 : 0;
+      output.putts[hole.index <= 9 ? 'front' : 'back'] += +hole.putts;
+      output.penalties[hole.index <= 9 ? 'front' : 'back'] += +hole.penalties;
+      console.log(hole.puttLengths);
+      output.puttsmade.total +=
+        hole.puttLengths.filter((e) => e != '').pop() * 2.5;
+    }
+  });
+  return output;
 };
 
 //Reset form for new round
@@ -289,11 +348,3 @@ function getHolesFromLocalStorage() {
 function saveHolesToLocalStorage() {
   localStorage.setItem('golfHoles', JSON.stringify(holes));
 }
-
-export const dirtyPar = function () {
-  let par = 0;
-  holes.forEach(function (hole) {
-    par += hole.isDirty ? hole.par : 0;
-  });
-  return par;
-};

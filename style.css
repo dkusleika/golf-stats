@@ -118,6 +118,12 @@ main {
   padding: 1px 1px;
 }
 
+.card-hole-putts {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  font-size: x-small;
+  padding: 1px 1px;
+}
 .card-row-last {
   display: grid;
   justify-content: center;

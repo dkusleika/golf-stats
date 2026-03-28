@@ -58,7 +58,7 @@ const setGir = function (btn) {
 const controlFormChange = function (e) {
   e.preventDefault;
 
-  if (e.target.classList.contains('puttlen')) {
+  if (e.target.classList.contains('putt-len')) {
     const puttNum = e.target.id.replace('putt', '').replace('len', '');
     model.currentHole.puttLengths[puttNum - 1] = e.target.value;
   } else {
@@ -68,7 +68,9 @@ const controlFormChange = function (e) {
   if (e.target.id !== 'holeSelect') {
     model.currentHole.isDirty = true;
   }
-  renderCard();
+  if (model.currentHole.isDirty) {
+    renderCard();
+  }
 };
 
 const controlFormTouchStart = function (event) {
@@ -124,13 +126,7 @@ const controlGir = function (e) {
 };
 
 const renderCard = function () {
-  if (model.currentHole.isDirty) {
-    cardView.renderCard(
-      model.dirtyPar(),
-      model.currentHole.index,
-      model.currentHole.score,
-    );
-  }
+  cardView.renderCard(model.currentHole, model.cumulativeStats());
 };
 
 const controlMenuItemResetGame = function (e) {

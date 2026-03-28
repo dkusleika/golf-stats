@@ -151,11 +151,11 @@ export const renderFairway = function (fairway, par) {
       e.classList.remove('not-applicable');
       e.classList.remove('target-child-active');
     });
-  }
 
-  document
-    .querySelector(`[data-value="${fairway.replace(' trbl', '')}"]`)
-    .classList.add('target-child-active');
+    document
+      .querySelector(`[data-value="${fairway.replace(' trbl', '')}"]`)
+      .classList.add('target-child-active');
+  }
 };
 
 export const renderGir = function (gir) {
