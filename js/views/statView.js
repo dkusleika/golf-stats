@@ -4,6 +4,7 @@ const menu = document.querySelector('.menu');
 const menuItems = document.querySelectorAll('.menu-item');
 const menuItemStats = document.querySelector('.menu-item-stats');
 const menuItemScorecard = document.querySelector('.menu-item-scorecard');
+const menuItemChangeCourse = document.querySelector('.menu-item-change-course');
 const menuItemResetGame = document.querySelector('.menu-item-reset-game');
 const menuItemResetHole = document.querySelector('.menu-item-reset-hole');
 const menuItemHelp = document.querySelector('.menu-item-help');
@@ -57,6 +58,15 @@ menuItemScorecard.addEventListener('click', function (e) {
   form.classList.add('nodisplay');
   help.classList.add('nodisplay');
 });
+
+menuItemChangeCourse.addEventListener('change', function (e) {
+  e.preventDefault();
+  toggleMenu();
+});
+
+export const addHandlerMenutemChangeCourse = function (handler) {
+  menuItemChangeCourse.addEventListener('change', handler);
+};
 
 export const addHandlerMenuItemResetGame = function (handler) {
   menuItemResetGame.addEventListener('click', handler);

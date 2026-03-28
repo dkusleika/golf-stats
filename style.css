@@ -65,8 +65,19 @@ body {
   cursor: pointer;
   color: white;
   padding: 1rem;
+  text-decoration: none;
 }
 
+.menu-item-change-course {
+  background: #40916c;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  text-align: center;
+}
 .showmenu {
   transform: translateY(0);
   z-index: 99;
@@ -132,6 +143,10 @@ main {
   margin: 1rem 6rem;
   justify-items: end;
   background-color: rgb(161, 206, 152);
+}
+
+.summary-value {
+  padding-right: 0.5rem;
 }
 
 .help {

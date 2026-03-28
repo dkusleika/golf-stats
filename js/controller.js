@@ -129,6 +129,12 @@ const renderCard = function () {
   cardView.renderCard(model.currentHole, model.cumulativeStats());
 };
 
+const controlMenuItemChangeCourse = function (e) {
+  e.preventDefault;
+  model.changeCourse(e.target.value);
+  changeHole(1);
+};
+
 const controlMenuItemResetGame = function (e) {
   e.preventDefault;
   model.resetForm();
@@ -149,48 +155,9 @@ const init = function () {
   statView.addHandlerCurrentHole(controlCurrentHole);
   statView.addHandlerFairway(controlFairway);
   statView.addHandlerGir(controlGir);
+  statView.addHandlerMenutemChangeCourse(controlMenuItemChangeCourse);
   statView.addHandlerMenuItemResetGame(controlMenuItemResetGame);
   statView.addHandlerMenuItemResetHole(controlMenuItemResetHole);
   changeHole(1);
 };
 init();
-
-// submitButton.addEventListener('click', function (event) {
-//   event.preventDefault();
-//   tokenClient.callback = async (resp) => {
-//     if (resp.error !== undefined) {
-//       throw resp;
-//     }
-//     // Call the Sheets API
-//     // await submitScores();
-//     await submitScores();
-//   };
-
-//   if (gapi.client.getToken() === null) {
-//     // Prompt the user to select a Google Account and ask for consent to share their data
-//     // when establishing a new session.
-//     tokenClient.requestAccessToken({ prompt: 'consent' });
-//   } else {
-//     // Skip display of account chooser and consent dialog for an existing session.
-//     tokenClient.requestAccessToken({ prompt: '' });
-//   }
-// });
-
-// async function submitScores() {
-//   saveHolesToLocalStorage();
-//   const dt = Intl.DateTimeFormat('en-us').format(new Date());
-//   // console.log(holes.map(hole => Object.values(hole)));
-//   let response;
-//   response = await gapi.client.sheets.spreadsheets.values.append({
-//     spreadsheetId: ss_id,
-//     range: 'Sheet1!A1:M1',
-//     valueInputOption: 'RAW',
-//     resource: {
-//       values: model.holes.map((hole) => Object.values(hole)),
-//     },
-//   });
-// }
-
-// puttsInput.addEventListener('change', function (event) {
-//   showHidePutts(+event.target.value.replace('putts', ''));
-// });

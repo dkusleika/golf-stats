@@ -1,7 +1,29 @@
+const courses = [
+  {
+    id: 'iron-horse',
+    name: 'Iron Horse',
+    pars: [4, 3, 4, 5, 3, 4, 4, 5, 4, 5, 3, 5, 4, 4, 3, 4, 4, 4],
+  },
+  {
+    id: 'tiburon-hammerhead',
+    name: 'Tiburon Hammerhead',
+    pars: [5, 3, 4, 4, 4, 4, 3, 4, 5, 4, 4, 4, 5, 4, 3, 4, 3, 5],
+  },
+  {
+    id: 'tiburon-mako',
+    name: 'Tiburon Mako',
+    pars: [4, 4, 4, 5, 4, 3, 4, 3, 5, 4, 4, 3, 5, 4, 4, 3, 5, 4],
+  },
+  {
+    id: 'tiburon-great-white',
+    name: 'Tiburon Great White',
+    pars: [4, 4, 3, 5, 4, 4, 3, 5, 4, 5, 3, 4, 4, 4, 4, 3, 4, 5],
+  },
+];
 export const holes = [
   {
     id: 'hole1',
-    par: 4,
+    par: 5,
     index: 1,
     score: '',
     fairway: '',
@@ -235,6 +257,14 @@ export const holes = [
   },
 ];
 
+export const changeCourse = function (courseId) {
+  courses
+    .filter((course) => course.id === courseId)[0]
+    .pars.forEach((par, i) => {
+      holes[i].par = par;
+    });
+};
+
 export let currentHole = holes[0];
 
 export const setCurrentHole = function (holeId) {
@@ -305,8 +335,9 @@ export const cumulativeStats = function () {
       output.putts[hole.index <= 9 ? 'front' : 'back'] += +hole.putts;
       output.penalties[hole.index <= 9 ? 'front' : 'back'] += +hole.penalties;
       console.log(hole.puttLengths);
-      output.puttsmade.total +=
-        hole.puttLengths.filter((e) => e != '').pop() * 2.5;
+      output.puttsmade.total += Math.round(
+        hole.puttLengths.filter((e) => e != '').pop() * 2.5,
+      );
     }
   });
   return output;
