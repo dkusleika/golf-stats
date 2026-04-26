@@ -2,7 +2,7 @@
 
 export const renderCard = function (currentHole, cumulativeStats) {
   document.querySelector(`.card-row-score--${currentHole.index}`).textContent =
-    currentHole.score;
+    currentHole.isDirty ? currentHole.score : '';
   document.querySelector(
     `.card-hole-stats--fairway--${currentHole.index}`,
   ).textContent = currentHole.fairway === 'fairway hit' ? '🟢' : '';

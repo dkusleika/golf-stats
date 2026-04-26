@@ -139,12 +139,14 @@ const controlMenuItemResetGame = function (e) {
   e.preventDefault;
   model.resetForm();
   changeHole(1);
+  cardView.renderCard(model.currentHole, model.cumulativeStats());
 };
 
 const controlMenuItemResetHole = function (e) {
   e.preventDefault;
   model.resetHole(model.currentHole);
   changeHole(model.currentHole.index);
+  cardView.renderCard(model.currentHole, model.cumulativeStats());
 };
 
 const init = function () {
@@ -159,5 +161,6 @@ const init = function () {
   statView.addHandlerMenuItemResetGame(controlMenuItemResetGame);
   statView.addHandlerMenuItemResetHole(controlMenuItemResetHole);
   changeHole(1);
+  renderCard();
 };
 init();

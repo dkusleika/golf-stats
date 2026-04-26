@@ -23,7 +23,7 @@ const courses = [
 export const holes = [
   {
     id: 'hole1',
-    par: 5,
+    par: 4,
     index: 1,
     score: '',
     fairway: '',
@@ -265,6 +265,7 @@ export const changeCourse = function (courseId) {
     });
 };
 
+getHolesFromLocalStorage();
 export let currentHole = holes[0];
 
 export const setCurrentHole = function (holeId) {
@@ -319,6 +320,7 @@ export const cumulativeStats = function () {
       total: 0,
     },
   };
+
   holes.forEach(function (hole) {
     if (hole.isDirty) {
       output.score[hole.index <= 9 ? 'front' : 'back'] += +hole.score;

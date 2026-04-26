@@ -253,6 +253,7 @@ h2.hole-number {
   margin-bottom: 1rem;
   font-size: 1rem;
   text-align: center;
+  text-align-last: center;
   box-sizing: border-box;
 }
 
