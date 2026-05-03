@@ -1,25 +1,4 @@
-const courses = [
-  {
-    id: 'iron-horse',
-    name: 'Iron Horse',
-    pars: [4, 3, 4, 5, 3, 4, 4, 5, 4, 5, 3, 5, 4, 4, 3, 4, 4, 4],
-  },
-  {
-    id: 'tiburon-hammerhead',
-    name: 'Tiburon Hammerhead',
-    pars: [5, 3, 4, 4, 4, 4, 3, 4, 5, 4, 4, 4, 5, 4, 3, 4, 3, 5],
-  },
-  {
-    id: 'tiburon-mako',
-    name: 'Tiburon Mako',
-    pars: [4, 4, 4, 5, 4, 3, 4, 3, 5, 4, 4, 3, 5, 4, 4, 3, 5, 4],
-  },
-  {
-    id: 'tiburon-great-white',
-    name: 'Tiburon Great White',
-    pars: [4, 4, 3, 5, 4, 4, 3, 5, 4, 5, 3, 4, 4, 4, 4, 3, 4, 5],
-  },
-];
+export const courses = [];
 export const holes = [
   {
     id: 'hole1',
@@ -257,9 +236,28 @@ export const holes = [
   },
 ];
 
+const supabaseUrl = 'https://nouffshabmsrnpxcriwr.supabase.co';
+const supabaseKey = 'sb_publishable_0Pw-1aHdMsdOPeJcD8Oy-Q_1CKePqZ_';
+const sb = supabase.createClient(supabaseUrl, supabaseKey);
+
+export const getCourses = async function () {
+  try {
+    const { data, error } = await sb
+      .from('courses')
+      .select('*')
+      .order('course_name');
+
+    data.forEach((c) => {
+      courses.push(c);
+    });
+  } catch (err) {
+    throw err;
+  }
+};
+
 export const changeCourse = function (courseId) {
   courses
-    .filter((course) => course.id === courseId)[0]
+    .filter((course) => course.course_id === courseId)[0]
     .pars.forEach((par, i) => {
       holes[i].par = par;
     });

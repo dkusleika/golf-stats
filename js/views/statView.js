@@ -33,6 +33,15 @@ for (let i = 0; i < 6; i++) {
   puttLenInputs[i] = document.getElementById(`putt${i + 1}len`);
 }
 
+export const listCourses = function (courses) {
+  if (courses) {
+    menuItemChangeCourse.innerHTML = '';
+    courses.forEach((c) => {
+      menuItemChangeCourse.add(new Option(c.course_name, c.course_id));
+    });
+  }
+};
+
 const toggleMenu = function () {
   menu.classList.toggle('showmenu');
   menuclose.classList.toggle('nav__hidden');

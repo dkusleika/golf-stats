@@ -149,7 +149,13 @@ const controlMenuItemResetHole = function (e) {
   cardView.renderCard(model.currentHole, model.cumulativeStats());
 };
 
-const init = function () {
+const init = async function () {
+  try {
+    await model.getCourses();
+    statView.listCourses(model.courses);
+  } catch (err) {
+    throw err;
+  }
   statView.addHandlerFormChange(controlFormChange);
   statView.addHandlerFormTouchStart(controlFormTouchStart);
   statView.addHandlerFormTouchEnd(controlFormTouchEnd);
